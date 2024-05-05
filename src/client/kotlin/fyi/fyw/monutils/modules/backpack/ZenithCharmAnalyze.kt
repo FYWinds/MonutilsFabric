@@ -41,12 +41,21 @@ object ZenithCharmAnalyze {
                     try {
                         stats.getString(it) == lineEffect
                                 && !it.contains("ACTIONS")
+                                && !it.contains("RARITY")
                     } catch (_: Exception) {
                         false
                     }
                 }
 
                 if (objectKey == null) {
+                    pushBackTooltip.add(currentLore)
+                    continue
+                }
+
+                var currentStat = 0.0
+                try {
+                    currentStat = currentLore.string.substringBefore(" ").replace(statRegex, "").toDouble()
+                } catch (e: Exception) {
                     pushBackTooltip.add(currentLore)
                     continue
                 }
@@ -63,7 +72,7 @@ object ZenithCharmAnalyze {
                 val objectNumber = objectKey.replace("DEPTHS_CHARM_EFFECT", "").toInt()
                 val objectRoll = stats.getDouble("DEPTHS_CHARM_ROLLS$objectNumber")
                 val maxRoll = CZCharmStats.charmStatMap[lineEffect] ?: 0.0
-                val currStatScore = currentLore.string.split(" ").first().replace(statRegex, "").toDouble() / maxRoll
+                val currStatScore = currentStat / maxRoll
                 charmScore += currStatScore
                 val currRoll = (objectRoll * 100).toBigDecimal().setScale(2, RoundingMode.HALF_UP)
 

@@ -4,6 +4,7 @@ import dev.isxander.yacl3.api.ConfigCategory
 import dev.isxander.yacl3.api.Option
 import dev.isxander.yacl3.api.OptionDescription
 import dev.isxander.yacl3.api.YetAnotherConfigLib
+import dev.isxander.yacl3.api.controller.BooleanControllerBuilder
 import dev.isxander.yacl3.api.controller.EnumControllerBuilder
 import dev.isxander.yacl3.api.controller.IntegerSliderControllerBuilder
 import dev.isxander.yacl3.api.controller.TickBoxControllerBuilder
@@ -41,6 +42,17 @@ object Misc {
                     )
                 )
 
+                option(Option.createBuilder<Boolean>().apply {
+                    name(Text.of("Enable Debug Messages"))
+                    description(OptionDescription.of(Text.of("Enable debug messages.")))
+                    binding(false, ::debug) { debug = it }
+                    controller {
+                        BooleanControllerBuilder.create(it).apply {
+                            valueFormatter { v -> if (v) Text.of("√") else Text.of("x") }
+                            coloured(true)
+                        }
+                    }
+                }.build())
 
                 option(Option.createBuilder<Boolean>().apply {
                     name(Text.translatableWithFallback("monutils.config.misc.pickup", "Auto Pickup"))
