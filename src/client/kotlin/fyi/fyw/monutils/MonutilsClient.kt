@@ -1,5 +1,6 @@
 package fyi.fyw.monutils
 
+import fyi.fyw.monutils.commands.ZenithCharmFilter
 import fyi.fyw.monutils.config.Backpack
 import fyi.fyw.monutils.config.Misc
 import fyi.fyw.monutils.modules.backpack.LootboxWarn
@@ -29,5 +30,6 @@ object MonutilsClient : ClientModInitializer {
     }
 
     private fun registerCommands() {
+        ZenithCharmFilter.registerCommand()
     }
 }

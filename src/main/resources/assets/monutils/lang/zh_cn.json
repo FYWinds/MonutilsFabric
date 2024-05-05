@@ -22,5 +22,15 @@
   "monutils.config.backpack.analyze_zenith_charm": "CZ Charm 分析",
   "monutils.config.backpack.analyze_zenith_charm.desc": "分析 CZ Charm.",
   "monutils.config.backpack.zenith_advanced_mode": "Zenith 高级模式",
-  "monutils.config.backpack.zenith_advanced_mode.desc": "按下 Left Control 键时显示高级信息 (R: ROLLS M: MAX)."
+  "monutils.config.backpack.zenith_advanced_mode.desc": "按下 Left Control 键时显示高级信息 (R: ROLLS M: MAX).",
+  "monutils.command.czfilter.add.success": "成功添加 %s 到过滤器.",
+  "monutils.command.czfilter.remove.success": "成功从过滤器中移除 %s.",
+  "monutils.command.czfilter.list.empty": "过滤器为空.",
+  "monutils.command.czfilter.list.header": "Filter list:",
+  "monutils.command.czfilter.list.item": "- %s",
+  "monutils.command.czfilter.clear.success": "Filter cleared.",
+  "monutils.command.czfilter.clear.confirm": "Are you sure you want to clear the filter? Type /czfilter clear again to confirm.",
+  "monutils.command.czfilter.add.error": "Error adding %s to filter.",
+  "monutils.command.czfilter.remove.error": "Error removing %s from filter.",
+  "monutils.command.czfilter.clear.error": "Error clearing filter."
 }

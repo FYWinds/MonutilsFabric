@@ -23,6 +23,7 @@ object Backpack {
     var lootBoxWarn: Int by ConfigDelegate(config, 25)
     var analyzeZenithCharm: Boolean by ConfigDelegate(config, false)
     var zenithAdvancedMode: Boolean by ConfigDelegate(config, false)
+    var zenithFilter: MutableSet<String> by ConfigDelegate(config, mutableSetOf())
 
     fun getBuilder(builder: YetAnotherConfigLib.Builder): YetAnotherConfigLib.Builder {
         return builder.category(
@@ -172,6 +173,7 @@ object Backpack {
         var lootBoxWarn = 25
         var analyzeZenithCharm = true
         var zenithAdvancedMode = false
+        var zenithFilter: MutableSet<String> = mutableSetOf()
     }
 
     class BackpackConfig(filePath: Path) : AbstractConfig<BackpackData>(filePath) {

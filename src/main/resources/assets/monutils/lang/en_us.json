@@ -1,5 +1,4 @@
 {
-  "key.monutils.quick_sell_gears": "Quick sell gears",
   "category.monutils": "MonuTils",
   "monutils.config.title": "MonUtils Configuration",
   "monutils.config.category.backpack": "Backpack Features",
@@ -23,5 +22,15 @@
   "monutils.config.backpack.analyze_zenith_charm": "Analyze Zenith Charm",
   "monutils.config.backpack.analyze_zenith_charm.desc": "Analyze Zenith Charm.",
   "monutils.config.backpack.zenith_advanced_mode": "Zenith Advanced Mode",
-  "monutils.config.backpack.zenith_advanced_mode.desc": "Show advanced stats (R: ROLLS M: MAX) when pressing left control."
+  "monutils.config.backpack.zenith_advanced_mode.desc": "Show advanced stats (R: ROLLS M: MAX) when pressing left control.",
+  "monutils.command.czfilter.add.success": "Successfully added %s to filter.",
+  "monutils.command.czfilter.remove.success": "Successfully removed %s from filter.",
+  "monutils.command.czfilter.list.empty": "Filter is empty.",
+  "monutils.command.czfilter.list.header": "Filter list:",
+  "monutils.command.czfilter.list.item": "- %s",
+  "monutils.command.czfilter.clear.success": "Filter cleared.",
+  "monutils.command.czfilter.clear.confirm": "Are you sure you want to clear the filter? Type /czfilter clear again to confirm.",
+  "monutils.command.czfilter.add.error": "Error adding %s to filter.",
+  "monutils.command.czfilter.remove.error": "Error removing %s from filter.",
+  "monutils.command.czfilter.clear.error": "Error clearing filter."
 }

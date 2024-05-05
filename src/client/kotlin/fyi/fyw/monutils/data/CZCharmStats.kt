@@ -4,15 +4,15 @@ import com.google.gson.JsonParser
 import fyi.fyw.monutils.utils.FileUtils
 import java.io.InputStreamReader
 
-object CZCharmStat {
+object CZCharmStats {
     const val RESOURCE_PATH = "assets/monutils/data/czcharmlist.json"
     val charmStatMap: MutableMap<String, Double> = loadCharmStat()
 
     private fun loadCharmStat(): MutableMap<String, Double> {
         val map = mutableMapOf<String, Double>()
         val json = FileUtils.getResource(RESOURCE_PATH) ?: return map
-        val root = JsonParser.parseReader(InputStreamReader(json)).asJsonObject
         try {
+            val root = JsonParser.parseReader(InputStreamReader(json)).asJsonObject
             root.entrySet().forEach {
                 map[it.key] = it.value.asDouble
             }
