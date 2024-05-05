@@ -26,11 +26,11 @@
   "monutils.command.czfilter.add.success": "成功添加 %s 到过滤器.",
   "monutils.command.czfilter.remove.success": "成功从过滤器中移除 %s.",
   "monutils.command.czfilter.list.empty": "过滤器为空.",
-  "monutils.command.czfilter.list.header": "Filter list:",
+  "monutils.command.czfilter.list.header": "过滤器: ",
   "monutils.command.czfilter.list.item": "- %s",
-  "monutils.command.czfilter.clear.success": "Filter cleared.",
-  "monutils.command.czfilter.clear.confirm": "Are you sure you want to clear the filter? Type /czfilter clear again to confirm.",
-  "monutils.command.czfilter.add.error": "Error adding %s to filter.",
-  "monutils.command.czfilter.remove.error": "Error removing %s from filter.",
-  "monutils.command.czfilter.clear.error": "Error clearing filter."
+  "monutils.command.czfilter.clear.success": "成功清空过滤器.",
+  "monutils.command.czfilter.clear.confirm": "确定要清空过滤器吗? 再次输入 /czfilter clear 确认.",
+  "monutils.command.czfilter.add.error": "添加 %s 到过滤器时出错.",
+  "monutils.command.czfilter.remove.error": "从过滤器中移除 %s 时出错.",
+  "monutils.command.czfilter.clear.error": "清空过滤器时出错."
 }
