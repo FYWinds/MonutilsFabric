@@ -16,11 +16,11 @@ import net.minecraft.text.Text
 import java.util.concurrent.CompletableFuture
 
 object ZenithCharmFilter {
-    var needClearConfirmation = false
-    var clearConfirmationTime = 0L
+    private var needClearConfirmation = false
+    private var clearConfirmationTime = 0L
 
     fun registerCommand() {
-        ClientCommandRegistrationCallback.EVENT.register { dispatcher, registryAccess ->
+        ClientCommandRegistrationCallback.EVENT.register { dispatcher, _ ->
             dispatcher.register(
                 literal("czfilter").apply {
                     then(
@@ -28,7 +28,26 @@ object ZenithCharmFilter {
                             argument("stat", StringArgumentType.greedyString()).suggests(AddSuggestionProvider())
                                 .executes { context ->
                                     val stat = context.getArgument("stat", String::class.java)
-                                    if (stat in CZAbilities.czAbilities || stat in CZCharmStats.charmStatMap.keys) {
+                                    if (stat in CZAbilities.czAbilities) {
+                                        val filter = Backpack.zenithFilter.toMutableSet()
+                                        val stats = CZCharmStats.charmStatMap.keys.filter {
+                                            it.contains(
+                                                stat,
+                                                ignoreCase = true
+                                            ) && it !in Backpack.zenithFilter
+                                        }
+                                        filter.addAll(stats)
+                                        Backpack.zenithFilter = filter
+
+                                        context.source.sendFeedback(
+                                            Text.translatable(
+                                                "monutils.command.czfilter.add.success",
+                                                "[${stats.joinToString(", ")}]"
+                                            )
+                                        )
+
+                                        return@executes 1
+                                    } else if (stat in CZCharmStats.charmStatMap.keys) {
                                         val filter = Backpack.zenithFilter.toMutableSet()
                                         filter.add(stat)
                                         Backpack.zenithFilter = filter
@@ -39,6 +58,7 @@ object ZenithCharmFilter {
                                                 stat
                                             )
                                         )
+
                                         return@executes 1
                                     } else {
                                         context.source.sendError(
@@ -134,12 +154,12 @@ object ZenithCharmFilter {
             try {
                 val input = context.getArgument("stat", String::class.java)
                 for (ability in CZAbilities.czAbilities) {
-                    if (ability.lowercase().startsWith(input.lowercase())) {
+                    if (ability.lowercase().startsWith(input.lowercase()) && ability !in Backpack.zenithFilter) {
                         builder.suggest(ability)
                     }
                 }
                 for (stat in CZCharmStats.charmStatMap.keys) {
-                    if (stat.lowercase().startsWith(input.lowercase())) {
+                    if (stat.lowercase().startsWith(input.lowercase()) && stat !in Backpack.zenithFilter) {
                         builder.suggest(stat)
                     }
                 }

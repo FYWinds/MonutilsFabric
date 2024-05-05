@@ -84,6 +84,9 @@ object ZenithCharmAnalyze {
                     }"
                 )
             )
+            if (total > matched) {
+                tooltip.add(Text.empty())
+            }
 
             tooltip.addAll(pushBackTooltip.filterIndexed { index, _ -> index < total - matched })
             tooltip.addAll(pushBackTooltip.filterIndexed { index, _ -> index >= total - matched })
