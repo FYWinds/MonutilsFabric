@@ -11,7 +11,7 @@
     "homepage": "https://fabricmc.net/",
     "sources": "https://github.com/fywinds/MonutilsFabric"
   },
-  "license": "IDGAFPL",
+  "license": "MIT",
   "icon": "assets/monutils/icon.png",
   "environment": "*",
   "entrypoints": {
