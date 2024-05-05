@@ -1,0 +1,66 @@
+{
+    "plain": {
+        "display": {
+            "Lore": [
+                "Architect's Ring : Zenith Charm",
+                "Charm Power :  - Epic",
+                "The Celestial Zenith",
+                "",
+                "When in Charm Slot:",
+                "-23.98% Advancing Shadows Cooldown",
+                "-30% Advancing Shadows Range",
+                "+1% Advancing Shadows Damage Multiplier",
+                "+1.01 Advancing Shadows Duration"
+            ],
+            "Name": "Misty Jewel of Strength"
+        }
+    },
+    "Enchantments": [
+        {
+            "id": "minecraft:power",
+            "lvl": 1
+        }
+    ],
+    "Monumenta": {
+        "Region": "ring",
+        "Tier": "zenithcharm",
+        "CharmPower": 1,
+        "PlayerModified": {
+            "DEPTHS_CHARM_RARITY": 4,
+            "DEPTHS_CHARM_EFFECT4": "Advancing Shadows Damage Multiplier",
+            "DEPTHS_CHARM_ROLLS4": 0.10070260276836562,
+            "DEPTHS_CHARM_ROLLS3": 0.52991315134538,
+            "DEPTHS_CHARM_ROLLS2": 0.7424760799973859,
+            "DEPTHS_CHARM_ROLLS1": 0.0014996114134874228,
+            "DEPTHS_CHARM_EFFECT1": "Advancing Shadows Cooldown",
+            "DEPTHS_CHARM_EFFECT3": "Advancing Shadows Duration",
+            "DEPTHS_CHARM_ACTIONS3": "Common",
+            "DEPTHS_CHARM_ACTIONS2": "Common",
+            "DEPTHS_CHARM_ACTIONS1": "Negative Common",
+            "DEPTHS_CHARM_UUID": 5339169473099745896,
+            "DEPTHS_CHARM_EFFECT2": "Advancing Shadows Range"
+        },
+        "CharmText": [
+            "{\"italic\":false,\"color\":\"#CD5ECA\",\"text\":\"-23.98% Advancing Shadows Cooldown\"}",
+            "{\"italic\":false,\"color\":\"red\",\"text\":\"-30% Advancing Shadows Range\"}",
+            "{\"italic\":false,\"color\":\"#9F929C\",\"text\":\"+1% Advancing Shadows Damage Multiplier\"}",
+            "{\"italic\":false,\"color\":\"#9F929C\",\"text\":\"+1.01 Advancing Shadows Duration\"}"
+        ],
+        "Location": "zenith"
+    },
+    "HideFlags": 1,
+    "display": {
+        "Lore": [
+            "{\"italic\":false,\"color\":\"dark_gray\",\"extra\":[{\"italic\":false,\"color\":\"#FF9CF0\",\"text\":\"Zenith Charm\"}],\"text\":\"Architect's Ring : \"}",
+            "{\"italic\":false,\"color\":\"dark_gray\",\"extra\":[{\"italic\":false,\"color\":\"#FFFA75\",\"text\":\"★\"},{\"italic\":false,\"color\":\"dark_gray\",\"text\":\" - \"},{\"italic\":false,\"obfuscated\":false,\"color\":\"#CD5ECA\",\"text\":\"Epic\"}],\"text\":\"Charm Power : \"}",
+            "{\"italic\":false,\"color\":\"#FF9CF0\",\"text\":\"The Celestial Zenith\"}",
+            "{\"text\":\"\"}",
+            "{\"italic\":false,\"color\":\"gray\",\"text\":\"When in Charm Slot:\"}",
+            "{\"italic\":false,\"color\":\"#CD5ECA\",\"text\":\"-23.98% Advancing Shadows Cooldown\"}",
+            "{\"italic\":false,\"color\":\"red\",\"text\":\"-30% Advancing Shadows Range\"}",
+            "{\"italic\":false,\"color\":\"#9F929C\",\"text\":\"+1% Advancing Shadows Damage Multiplier\"}",
+            "{\"italic\":false,\"color\":\"#9F929C\",\"text\":\"+1.01 Advancing Shadows Duration\"}"
+        ],
+        "Name": "{\"bold\":true,\"italic\":false,\"underlined\":false,\"color\":\"#CD5ECA\",\"text\":\"Misty Jewel of Strength\"}"
+    }
+}

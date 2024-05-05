@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "monutils",
+  "version": "${version}",
+  "name": "Monutils",
+  "description": "This is a utility mod for monumenta.",
+  "authors": [
+    "FYWinds"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/fywinds/MonutilsFabric"
+  },
+  "license": "IDGAFPL",
+  "icon": "assets/monutils/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "value": "fyi.fyw.monutils.Monutils",
+        "adapter": "kotlin"
+      }
+    ],
+    "client": [
+      {
+        "value": "fyi.fyw.monutils.MonutilsClient",
+        "adapter": "kotlin"
+      }
+    ],
+    "modmenu": [
+      {
+        "value": "fyi.fyw.monutils.config.ModMenuIntegration",
+        "adapter": "kotlin"
+      }
+    ]
+  },
+  "mixins": [
+    "monutils.mixins.json",
+    {
+      "config": "monutils.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.19.4",
+    "java": ">=17",
+    "fabric-api": "*",
+    "fabric-language-kotlin": ">=1.9.21",
+    "yet_another_config_lib_v3": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "update_checker": false
+    }
+  }
+}

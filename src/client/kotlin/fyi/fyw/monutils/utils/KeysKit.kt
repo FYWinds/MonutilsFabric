@@ -1,0 +1,40 @@
+package fyi.fyw.monutils.utils
+
+import net.minecraft.client.MinecraftClient
+import net.minecraft.client.util.InputUtil
+
+object KeysKit {
+    fun isKeyDown(keyCode: Int): Boolean {
+        return InputUtil.isKeyPressed(MinecraftClient.getInstance().window.handle, keyCode)
+    }
+
+    fun isShiftDown(): Boolean {
+        return InputUtil.isKeyPressed(
+            MinecraftClient.getInstance().window.handle,
+            InputUtil.GLFW_KEY_LEFT_SHIFT
+        ) || InputUtil.isKeyPressed(
+            MinecraftClient.getInstance().window.handle,
+            InputUtil.GLFW_KEY_RIGHT_SHIFT
+        )
+    }
+
+    fun isAltDown(): Boolean {
+        return InputUtil.isKeyPressed(
+            MinecraftClient.getInstance().window.handle,
+            InputUtil.GLFW_KEY_LEFT_ALT
+        ) || InputUtil.isKeyPressed(
+            MinecraftClient.getInstance().window.handle,
+            InputUtil.GLFW_KEY_RIGHT_ALT
+        )
+    }
+
+    fun isCtrlDown(): Boolean {
+        return InputUtil.isKeyPressed(
+            MinecraftClient.getInstance().window.handle,
+            InputUtil.GLFW_KEY_LEFT_CONTROL
+        ) || InputUtil.isKeyPressed(
+            MinecraftClient.getInstance().window.handle,
+            InputUtil.GLFW_KEY_RIGHT_CONTROL
+        )
+    }
+}

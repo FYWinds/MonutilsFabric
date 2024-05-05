@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "fyi.fyw.monutils.mixin.client",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "ActionBarMessageMixin",
+    "InGameHudMixin",
+    "InventoryAnalysisMixin",
+    "PlayerLevelMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
