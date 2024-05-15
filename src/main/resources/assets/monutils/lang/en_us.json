@@ -32,5 +32,7 @@
   "monutils.command.czfilter.clear.confirm": "Are you sure you want to clear the filter? Type /czfilter clear again to confirm.",
   "monutils.command.czfilter.add.error": "Error adding %s to filter.",
   "monutils.command.czfilter.remove.error": "Error removing %s from filter.",
-  "monutils.command.czfilter.clear.error": "Error clearing filter."
+  "monutils.command.czfilter.clear.error": "Error clearing filter.",
+  "monutils.config.backpack.show_zenith_charm_summary": "Show Zenith Charm Summary",
+  "monutils.config.backpack.show_zenith_charm_summary.desc": "Show Zenith Charm Summary outside Zenith."
 }

@@ -23,6 +23,7 @@ object Backpack {
     var lootBoxWarn: Int by ConfigDelegate(config, 25)
     var analyzeZenithCharm: Boolean by ConfigDelegate(config, false)
     var zenithAdvancedMode: Boolean by ConfigDelegate(config, false)
+    var showZenithCharmSummary: Boolean by ConfigDelegate(config, false)
     var zenithFilter: MutableSet<String> by ConfigDelegate(config, mutableSetOf())
 
     fun getBuilder(builder: YetAnotherConfigLib.Builder): YetAnotherConfigLib.Builder {
@@ -159,6 +160,29 @@ object Backpack {
                                 controller(TickBoxControllerBuilder::create)
                             }.build()
                         )
+
+                        option(
+                            Option.createBuilder<Boolean>().apply {
+                                name(
+                                    Text.translatableWithFallback(
+                                        "monutils.config.backpack.show_zenith_charm_summary",
+                                        "Show Zenith Charm Summary"
+                                    )
+                                )
+                                description(
+                                    OptionDescription.of(
+                                        Text.translatableWithFallback(
+                                            "monutils.config.backpack.show_zenith_charm_summary.desc",
+                                            "Show Zenith Charm Summary outside Zenith."
+                                        )
+                                    )
+                                )
+                                binding(true, this@Backpack::showZenithCharmSummary) { newVal ->
+                                    showZenithCharmSummary = newVal
+                                }
+                                controller(TickBoxControllerBuilder::create)
+                            }.build()
+                        )
                     }.build()
                 )
             }.build()
@@ -173,6 +197,7 @@ object Backpack {
         var lootBoxWarn = 25
         var analyzeZenithCharm = true
         var zenithAdvancedMode = false
+        var showZenithCharmSummary = true
         var zenithFilter: MutableSet<String> = mutableSetOf()
     }
 

@@ -32,5 +32,7 @@
   "monutils.command.czfilter.clear.confirm": "确定要清空过滤器吗? 再次输入 /czfilter clear 确认.",
   "monutils.command.czfilter.add.error": "添加 %s 到过滤器时出错.",
   "monutils.command.czfilter.remove.error": "从过滤器中移除 %s 时出错.",
-  "monutils.command.czfilter.clear.error": "清空过滤器时出错."
+  "monutils.command.czfilter.clear.error": "清空过滤器时出错.",
+  "monutils.config.backpack.show_zenith_charm_summary": "显示 CZ Charm 概要",
+  "monutils.config.backpack.show_zenith_charm_summary.desc": "不在 Zenith 内时显示 CZ Charm 概要."
 }

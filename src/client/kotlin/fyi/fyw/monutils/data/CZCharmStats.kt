@@ -1,26 +1,46 @@
 package fyi.fyw.monutils.data
 
-import com.google.gson.JsonParser
 import fyi.fyw.monutils.utils.FileUtils
-import java.io.InputStreamReader
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
 
 object CZCharmStats {
-    const val RESOURCE_PATH = "assets/monutils/data/czcharmlist.json"
-    val charmStatMap: MutableMap<String, Double> = loadCharmStat()
+    const val RESOURCE_PATH = "assets/monutils/data/Zenithcharm_stats.json"
+    var charmStatMap: Map<String, CharmStat>
+    val deserializer = Json { ignoreUnknownKeys = true }
 
-    private fun loadCharmStat(): MutableMap<String, Double> {
-        val map = mutableMapOf<String, Double>()
-        val json = FileUtils.getResource(RESOURCE_PATH) ?: return map
-        try {
-            val root = JsonParser.parseReader(InputStreamReader(json)).asJsonObject
-            root.entrySet().forEach {
-                map[it.key] = it.value.asDouble
+    init {
+        charmStatMap = mapOf()
+        val inner: CharmStatMap
+        val json = FileUtils.getResource(RESOURCE_PATH)
+        if (json != null) {
+            try {
+                inner = deserializer.decodeFromString(json.readAllBytes().decodeToString())
+                charmStatMap = inner.data
+            } catch (e: Exception) {
+                println("Failed to load zenith charm stat data.")
+                e.printStackTrace()
             }
-        } catch (e: Exception) {
-            println("Failed to load zenith charm stat data.")
-            e.printStackTrace()
         }
-        println("Loaded ${map.size} zenith charm stats.")
-        return map
+        println("Loaded ${charmStatMap.size} zenith charm stats.")
     }
+
+    @Serializable
+    data class CharmStat(
+        val effectCap: Double,
+        val isOnlyPositive: Boolean,
+        val isPercent: Boolean,
+        val commonStat: List<Double>,
+        val uncommonStat: List<Double>,
+        val rareStat: List<Double>,
+        val epicStat: List<Double>,
+        val legendaryStat: List<Double>
+    )
+
+    @Serializable
+    data class CharmStatMap(
+//        val version: String,
+//        val credit: String,
+        val data: Map<String, CharmStat>
+    )
 }

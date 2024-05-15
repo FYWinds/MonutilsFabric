@@ -20,8 +20,16 @@ import java.util.Optional;
 abstract class InventoryAnalysisMixin {
     @Inject(method = "renderTooltip(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/item/ItemStack;II)V", at = @At("HEAD"), cancellable = true)
     public void renderTooltip(MatrixStack matrices, ItemStack stack, int x, int y, CallbackInfo info) {
-        if (stack != null && Backpack.INSTANCE.getAnalyzeZenithCharm()) {
-            List<Text> tooltip = ZenithCharmAnalyze.INSTANCE.analyze(stack);
+        if (stack != null) {
+            List<Text> tooltip = null;
+            if (Backpack.INSTANCE.getAnalyzeZenithCharm()) {
+                tooltip = ZenithCharmAnalyze.INSTANCE.analyze(stack);
+            }
+
+            if (tooltip == null && Backpack.INSTANCE.getShowZenithCharmSummary()) {
+                tooltip = ZenithCharmAnalyze.INSTANCE.charmSummary(stack);
+            }
+
             if (tooltip != null) {
                 renderTooltip(matrices, tooltip, stack.getTooltipData(), x, y);
                 info.cancel();
