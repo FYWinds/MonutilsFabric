@@ -151,7 +151,7 @@ object ZenithCharmAnalyze {
             index in 45..53
                     && item.hasCustomName() // Make sure not red glass pane
         }
-        val charmStats = mutableMapOf<String, StatSummary>()
+        var charmStats = mutableMapOf<String, StatSummary>()
         charmList.forEach { charm ->
             val stats = getStats(charm)
             stats.forEach { (key, value) ->
@@ -163,6 +163,7 @@ object ZenithCharmAnalyze {
                 }
             }
         }
+        charmStats = charmStats.toSortedMap()
 
         charmStats.forEach { (effect, stat) ->
             CZCharmStats.charmStatMap[effect]?.let { statData ->
